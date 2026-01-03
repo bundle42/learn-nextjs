@@ -22,9 +22,14 @@ export default async function MovieInfo({ id }: { id: string }) {
         <a href={movie.homepage} target="_blank">
           Homepage &rarr;
         </a>
+        <a href={`/movies/${id}/credits`}>Credits &rarr;</a>
+        <a href={`/movies/${id}/similar`}>Similar Movies &rarr;</a>
         <h3>Profit: ${movie.revenue - movie.budget}</h3>
+        <h3>
+          Genres: {movie.genres.map((genre: any) => genre.name).join(", ")}
+        </h3>
         <img
-          src={movie.production_companies[0].logo_path}
+          src={movie.production_companies?.[0]?.logo_path || "/fallback.png"}
           className={potato.company}
           alt={movie.title}
         />

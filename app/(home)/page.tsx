@@ -14,7 +14,7 @@ async function getMovies() {
 }
 
 export default async function HomePage() {
-  const movies = await getMovies();
+  const movies = await getMovies(); // movies는 노마드 URL의 json()
   return (
     <div className={styles.container}>
       {movies.map((movie) => (
