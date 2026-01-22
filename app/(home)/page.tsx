@@ -23,6 +23,7 @@ export default async function HomePage() {
           id={movie.id}
           poster_path={movie.poster_path}
           title={movie.title}
+          vote_average={movie.vote_average}
         />
       ))}
     </div>

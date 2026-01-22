@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import SimilarInfo from "../../../../../components/movie.similar";
+import SimilarInfo from "../../../../../components/movie-similar";
 
 interface Iparams {
   params: Promise<{ id: string }>;

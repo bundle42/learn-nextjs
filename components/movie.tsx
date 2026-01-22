@@ -8,9 +8,15 @@ interface IMovieProps {
   title: string;
   id: string;
   poster_path: string;
+  vote_average: number;
 }
 
-export default function Movie({ title, id, poster_path }: IMovieProps) {
+export default function Movie({
+  title,
+  id,
+  poster_path,
+  vote_average,
+}: IMovieProps) {
   const router = useRouter();
   const onClick = () => {
     router.push(`/movies/${id}`);
@@ -21,6 +27,7 @@ export default function Movie({ title, id, poster_path }: IMovieProps) {
       <Link prefetch href={`/movies/${id}`}>
         {title}
       </Link>
+      <p>★ {vote_average.toFixed(1)}</p>
     </div>
   );
 }
